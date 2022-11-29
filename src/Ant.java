@@ -133,7 +133,7 @@ public class Ant {
 
     }
 
-    void update_pheromones( )
+    void update_pheromones()
     {
         for(int i =1; i < visited_places.size();i++)
         {
