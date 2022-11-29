@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 import org.junit.Test;
@@ -19,11 +20,13 @@ public class Main {
         gr.make_distances(gr);
         print_info.print_task(antAmount, wildAntAmount, citiesAmount, alpha, beta, rho);
 
-        for(int i =0; i<=100;i++) {
-            if(i%20==0) System.out.println("Iteration №"+ i);
-            main_tsl.start_program(-1, gr, antAmount, wildAntAmount, citiesAmount, i);
-        }
+        ArrayList<Integer> Lpr = new ArrayList<>();
 
+
+            int this_min = main_tsl.start_program(-1, gr, antAmount, wildAntAmount, citiesAmount);
+
+
+        System.out.println("\nMinimum from all iterations: "+ this_min);
         Graph.greedyLength(gr,citiesAmount);
 
 
@@ -46,9 +49,8 @@ public class Main {
 
         Graph gr = Graph.ready_graph(distances);
         gr.print_graph();
-        main_tsl.start_program(1, gr, antAmount,wildAntAmount,citiesAmount,20);
+        main_tsl.start_program(1, gr, antAmount,wildAntAmount,citiesAmount);
 
-        //рахує не правильно
         Graph.greedyLength(gr,citiesAmount);
 
     }

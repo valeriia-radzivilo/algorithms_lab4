@@ -30,18 +30,8 @@ public class Ant {
         Ant.pheromone = pheromone;
     }
 
-    public void setDistance_made(int dist)
-    {
-        this.distance_made = dist;
-    }
 
-    boolean getWildness()
-    {
-        return isWild;
-    }
-
-
-    public void start_travelling(Graph graph, ArrayList<City>cities)
+    public void start_travelling(Graph graph, ArrayList<City>cities, int for_test_not_zero)
     {
         if(!this.isWild)
         {
@@ -52,17 +42,17 @@ public class Ant {
 
             make_random_travelling(graph, cities);
         }
-
-//        System.out.print("ROUTE OF THIS ANT: ");
-//        for(City c: visited_places)
-//            System.out.print(c.id_to_string()+" ");
-//        System.out.println();
-//        System.out.println("DISTANCE: "+distance_made);
-//        if(!this.isWild)
-//        {
-//            for(double[]c:pheromone)
-//                System.out.println(Arrays.toString(c));
-//        }
+        if(for_test_not_zero == 0) {
+            System.out.print("ROUTE OF THIS ANT: ");
+            for (City c : visited_places)
+                System.out.print(c.getId() + " ");
+            System.out.println();
+            System.out.println("DISTANCE: " + distance_made);
+            if (!this.isWild) {
+                for (double[] c : pheromone)
+                    System.out.println(Arrays.toString(c));
+            }
+        }
     }
 
     public static ArrayList<City> set_ants(ArrayList<City>cities)
@@ -176,7 +166,7 @@ public class Ant {
 
     City find_min_probability(ArrayList<City>cities_left_to_visit, Graph gr, City start_city)
     {
-        double min_prob = 0.;
+        double min_prob = 1.;
         double prob = 0;
         int[]distances = new int[cities_left_to_visit.size()];
         double[] down_values = new double[cities_left_to_visit.size()];
@@ -205,7 +195,7 @@ public class Ant {
             prob = (upper/sum_of_down_values);
 //            System.out.print(prob);
 //            System.out.print("   ");
-            if(prob>=min_prob)
+            if(prob<=min_prob)
             {
                 min_prob = prob;
                 min_prob_city = c;

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de00093e-dc2c-4a9e-a81f-ac580cc80707" name="Changes" comment="1">
-      <change afterPath="$PROJECT_DIR$/src/City.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main_tsl.java" afterDir="false" />
+    <list default="true" id="de00093e-dc2c-4a9e-a81f-ac580cc80707" name="Changes" comment="before I delete City class 24 sec to do">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/algorithms_lab4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms_lab4.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_tsl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_tsl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/print_info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/print_info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +78,7 @@
       <workItem from="1669468067486" duration="5482000" />
       <workItem from="1669558288329" duration="13528000" />
       <workItem from="1669637222858" duration="5095000" />
-      <workItem from="1669746470683" duration="2390000" />
+      <workItem from="1669746470683" duration="7751000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1669470010412</created>
@@ -88,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669470010412</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="before I delete City class 24 sec to do">
+      <created>1669754499920</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669754499920</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +103,31 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="2f700e80-7ee8-414b-8637-e359e66694ff">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/leraz/IdeaProjects/algorithms_lab4/src" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -104,23 +135,24 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="2f700e80-7ee8-414b-8637-e359e66694ff" value="TOOL_WINDOW" />
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="before I delete City class 24 sec to do" />
+    <option name="LAST_COMMIT_MESSAGE" value="before I delete City class 24 sec to do" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>26</line>
+          <line>29</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

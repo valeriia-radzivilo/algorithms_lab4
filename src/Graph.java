@@ -7,20 +7,6 @@ public class Graph {
     private int V;
     private ArrayList<Integer> adj[]; //Adjacency Lists
 
-
-    public int graph_size() {
-        int size_gr=0;
-
-        for (int i = 0; i < V; i++) {
-            if (!adj[i].isEmpty())
-                size_gr=i;
-            else
-                i=V;
-        }
-        return size_gr;
-    }
-
-
     public ArrayList<Integer> get_adj(int V)
     {
         return adj[V];

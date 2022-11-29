@@ -11,6 +11,7 @@ public class print_info {
         System.out.println("Alpha: "+alpha);
         System.out.println("Beta: "+beta);
         System.out.println("Pheromone evaporation rate(rho): "+rho);
+        System.out.println("___________________\n");
 
 
     }
