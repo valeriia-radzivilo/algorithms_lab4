@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 
@@ -25,16 +26,26 @@ public class Graph {
         return adj[V];
     }
 
+    public void setAdj(int v, ArrayList<Integer>arr)
+    {
+        adj[v] = new ArrayList<>(arr);
+    }
+
 
     public void print_graph()
     {
+        System.out.println(V);
         for(int i =0; i< V;i++) {
             if(!adj[i].isEmpty())
-                System.out.print(adj[i]);
+                for(int j : get_adj(i))
+                {
+                    System.out.print(j+"   ");
+                }
             else
                 i = V;
+            System.out.println();
         }
-        System.out.println();
+
     }
 
     // Constructor
@@ -88,9 +99,65 @@ public class Graph {
     }
 
 
+    public static Graph ready_graph(int[][]distances)
+    {
+        Graph gr = new Graph(distances.length);
 
 
+        for(int i = 0; i< distances.length;i++)
+        {
+            gr.setAdj(i,int_arr_to_list(distances[i]));
+        }
 
+        return gr;
+
+    }
+
+    static ArrayList<Integer> int_arr_to_list(int[] arr)
+    {
+        ArrayList<Integer>answer = new ArrayList<>();
+        for (int j : arr) {
+            answer.add(j);
+        }
+    return answer;
+    }
+
+    int find_min_in_adj(int v, ArrayList<Integer>visited)
+    {
+        ArrayList<Integer> ar = new ArrayList<>(this.get_adj(v));
+        int min = ar.size()*1000000;
+        int pos = 0;
+        for(int i=0;i<ar.size();i++)
+            if(ar.get(i)<min && i!=0 && !visited.contains(i))
+            {
+                min = ar.get(i);
+                pos = i;
+            }
+
+        return pos;
+    }
+
+
+    public static void greedyLength(Graph graph, int citiesCount)
+    {
+        int min_dist =0;
+
+        ArrayList<Integer>visited = new ArrayList<>();
+        visited.add(0);
+        ArrayList<Integer> vals = new ArrayList<>();
+        for(int k =0; k<citiesCount-1;k++) {
+            int val = graph.find_min_in_adj(visited.get(visited.size() - 1),visited);
+            visited.add(val);
+            min_dist+=graph.travelling_distance(graph,visited.get(visited.size()-2),visited.get(visited.size()-1));
+
+        }
+        visited.add(0);
+        min_dist+=graph.travelling_distance(graph,visited.get(visited.size()-2),visited.get(visited.size()-1));
+
+//        System.out.println("Greedy path: "+ visited);
+        System.out.println("Greedy Lmin: "+ min_dist);
+
+    }
 
 
 }
