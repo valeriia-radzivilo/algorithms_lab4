@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de00093e-dc2c-4a9e-a81f-ac580cc80707" name="Changes" comment="before changing iterations &#10;update pheromones">
+    <list default="true" id="de00093e-dc2c-4a9e-a81f-ac580cc80707" name="Changes" comment="changes hopefully final">
+      <change afterPath="$PROJECT_DIR$/src/Tester.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/City.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_tsl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_tsl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +44,10 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="Main.TestNotRandomValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tester.TestNotRandomValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="algorithms_lab4" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="Tester" />
       <option name="METHOD_NAME" value="TestNotRandomValue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -58,7 +56,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Main.TestNotRandomValue" />
+        <item itemvalue="JUnit.Tester.TestNotRandomValue" />
       </list>
     </recent_temporary>
   </component>
@@ -82,7 +80,7 @@
       <workItem from="1670069355392" duration="6999000" />
       <workItem from="1670187184681" duration="14000" />
       <workItem from="1670237025104" duration="8512000" />
-      <workItem from="1670269036754" duration="2188000" />
+      <workItem from="1670269036754" duration="2888000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1669470010412</created>
@@ -112,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669760008710</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="changes hopefully final">
+      <created>1670273555751</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670273555751</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,14 +168,15 @@
     <MESSAGE value="1" />
     <MESSAGE value="before I delete City class 24 sec to do" />
     <MESSAGE value="before changing iterations &#10;update pheromones" />
-    <option name="LAST_COMMIT_MESSAGE" value="before changing iterations &#10;update pheromones" />
+    <MESSAGE value="changes hopefully final" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes hopefully final" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>22</line>
+          <line>18</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
