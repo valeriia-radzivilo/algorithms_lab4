@@ -6,8 +6,6 @@ public class Ant {
     int alpha = 4;
     int beta = 2;
 
-    double rho = 0.3;
-
     boolean isWild;
     int id;
     int distance_made = 0;
@@ -15,7 +13,7 @@ public class Ant {
     City start_pos;
     ArrayList<City>visited_places = new ArrayList<>();
 
-    static double[][]pheromone;
+    static double[][] pheromone;
 
 
     public Ant(boolean isWild, int id,City start_pos)
@@ -25,23 +23,23 @@ public class Ant {
         this.start_pos=start_pos;
     }
 
-    public static void setPheromone(double[][] pheromone)
+    public double[][] start_travelling(Graph graph, ArrayList<City>cities, int for_test_not_zero, double[][] pheromone_new)
     {
-        Ant.pheromone = pheromone;
-    }
-
-
-    public void start_travelling(Graph graph, ArrayList<City>cities, int for_test_not_zero)
-    {
+        double[][] pheromone_old = copy_matrix(pheromone);
+        double [][] new_updated = copy_matrix(pheromone_new);
+        double [][] old_shit = copy_matrix(pheromone_old);
         if(!this.isWild)
         {
-            make_not_random_travel(graph,cities);
+            new_updated = make_not_random_travel(graph,cities,pheromone_new,pheromone_old);
         }
+
         else {
             // make random decisions
 
             make_random_travelling(graph, cities);
         }
+        pheromone = old_shit.clone();
+
         if(for_test_not_zero == 0) {
             System.out.print("ROUTE OF THIS ANT: ");
             for (City c : visited_places)
@@ -53,6 +51,7 @@ public class Ant {
                     System.out.println(Arrays.toString(c));
             }
         }
+        return new_updated;
     }
 
     public static ArrayList<City> set_ants(ArrayList<City>cities)
@@ -112,7 +111,7 @@ public class Ant {
 
     }
 
-    void make_not_random_travel(Graph gr, ArrayList<City> cities)
+    double[][] make_not_random_travel(Graph gr, ArrayList<City> cities, double[][] previously_updated, double[][]old_pheromone)
     {
         visited_places.add(this.start_pos);
         cities.remove(this.start_pos);
@@ -121,36 +120,35 @@ public class Ant {
         {
             City start_city = visited_places.get(visited_places.size()-1);
             ArrayList<City> available_cities = get_available_cities(cities);
-            next_city = find_min_probability(available_cities, gr,start_city);
+            next_city = find_min_probability(available_cities, gr,start_city, old_pheromone);
             distance_made+=gr.travelling_distance(gr,start_city.getId(),next_city.getId());
             visited_places.add(next_city);
         }
         assert next_city != null;
         distance_made+= gr.travelling_distance(gr,next_city.getId(),this.start_pos.getId());
         visited_places.add(this.start_pos);
-        update_pheromones();
+        return update_pheromones(previously_updated);
 
 
     }
 
-    void update_pheromones()
+    double[][] update_pheromones(double[][] previously_updated)
     {
         for(int i =1; i < visited_places.size();i++)
         {
             int from_id = visited_places.get(i-1).getId();
             int to_id = visited_places.get(i).getId();
-            double new_pho = pheromone[from_id][to_id];
-            if(pheromone[from_id][to_id]==1)
-                new_pho = (1-rho)+(1.0/distance_made);
-            else
-                new_pho+=(1.0/distance_made);
+            double new_pho =(1.0/distance_made);
 
-            pheromone[from_id][to_id] = new_pho;
-            pheromone[to_id][from_id] = new_pho;
+            previously_updated[from_id][to_id] += new_pho;
+            previously_updated[to_id][from_id] += new_pho;
+            previously_updated[i-1][i-1] = 1;
 
         }
 
+        return previously_updated;
     }
+
 
     ArrayList<City> get_available_cities(ArrayList<City> cities)
     {
@@ -164,9 +162,9 @@ public class Ant {
     }
 
 
-    City find_min_probability(ArrayList<City>cities_left_to_visit, Graph gr, City start_city)
+    City find_min_probability(ArrayList<City>cities_left_to_visit, Graph gr, City start_city, double[][] old_pheromone)
     {
-        double min_prob = 1.;
+        double min_prob = 0;
         double prob = 0;
         int[]distances = new int[cities_left_to_visit.size()];
         double[] down_values = new double[cities_left_to_visit.size()];
@@ -175,39 +173,75 @@ public class Ant {
         {
             int to_id = cities_left_to_visit.get(i).getId();
             distances[i] = gr.travelling_distance(gr,start_city.getId(),cities_left_to_visit.get(i).getId());
-            down_values[i] = Math.pow(pheromone[from_id][to_id],alpha)*Math.pow(1.0/distances[i],beta);
+            down_values[i] = Math.pow(old_pheromone[from_id][to_id],alpha)*Math.pow(1.0/distances[i],beta);
 
         }
         double sum_of_down_values = 0;
         for (double down_value : down_values) {
             sum_of_down_values += down_value;
         }
-//        System.out.println("DOWN: "+Double.toString(sum_of_down_values));
+
         City min_prob_city = cities_left_to_visit.get(0);
-//        System.out.println("PROBS: ");
+        ArrayList<Double> PROBS = new ArrayList<>();
         for(City c : cities_left_to_visit)
         {
             int to_id = c.getId();
 
 
-            double upper = Math.pow(pheromone[from_id][to_id],alpha)*Math.pow(1.0/distances[cities_left_to_visit.indexOf(c)],beta);
-//            System.out.println("UPPER: "+upper);
+            double upper = Math.pow(old_pheromone[from_id][to_id],alpha)*Math.pow(1.0/distances[cities_left_to_visit.indexOf(c)],beta);
+
             prob = (upper/sum_of_down_values);
-//            System.out.print(prob);
-//            System.out.print("   ");
-            if(prob<=min_prob)
-            {
-                min_prob = prob;
-                min_prob_city = c;
-            }
+            PROBS.add(prob);
         }
-//        System.out.println();
+        ArrayList<Double> sums = new ArrayList<>();
+        for(int k =0; k<PROBS.size();k++)
+        {
+            sums.add(sum_till_end(PROBS,k));
+        }
+        sums.add(0.);
+
+
+        Random random = new Random();
+        double val = random.nextDouble(1);
+        int right_sum_pos = 0;
+        for(int l =0; l<sums.size()-1;l++)
+        {
+            if(val<=sums.get(l) && val>sums.get(l+1))
+            {
+                right_sum_pos = l;
+            }
+
+        }
+        min_prob_city = cities_left_to_visit.get(right_sum_pos);
+
 
         return min_prob_city;
     }
 
+    double sum_till_end(ArrayList<Double> probs, int pos)
+    {
+        double answer =0.;
+        for(int i = pos; i<probs.size();i++)
+        {
+            answer+=probs.get(i);
+        }
+        return answer;
+    }
 
 
+    static double[][]copy_matrix(double[][] old_matr)
+    {
+        double[][] new_matr = new double[old_matr.length][old_matr.length];
+        for(int i =0; i< old_matr.length;i++)
+        {
+            for(int j =0; j<old_matr.length;j++)
+            {
+                new_matr[i][j] = old_matr[i][j];
+            }
+
+        }
+        return new_matr;
+    }
 
 
 }

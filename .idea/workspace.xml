@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de00093e-dc2c-4a9e-a81f-ac580cc80707" name="Changes" comment="before I delete City class 24 sec to do">
+    <list default="true" id="de00093e-dc2c-4a9e-a81f-ac580cc80707" name="Changes" comment="before changing iterations &#10;update pheromones">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/City.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main_tsl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main_tsl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/print_info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/print_info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/leraz/Downloads/C_2JavaPlugin.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/leraz/IdeaProjects/asd2_lab2 - Copy&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
@@ -78,7 +77,12 @@
       <workItem from="1669468067486" duration="5482000" />
       <workItem from="1669558288329" duration="13528000" />
       <workItem from="1669637222858" duration="5095000" />
-      <workItem from="1669746470683" duration="7751000" />
+      <workItem from="1669746470683" duration="9621000" />
+      <workItem from="1669805266470" duration="63000" />
+      <workItem from="1670069355392" duration="6999000" />
+      <workItem from="1670187184681" duration="14000" />
+      <workItem from="1670237025104" duration="8512000" />
+      <workItem from="1670269036754" duration="2188000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1669470010412</created>
@@ -94,7 +98,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669754499920</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="before changing iterations &#10;update pheromones">
+      <created>1669759822982</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669759822982</updated>
+    </task>
+    <task id="LOCAL-00004" summary="before changing iterations &#10;update pheromones">
+      <created>1669760008710</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669760008710</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,17 +162,28 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
     <MESSAGE value="before I delete City class 24 sec to do" />
-    <option name="LAST_COMMIT_MESSAGE" value="before I delete City class 24 sec to do" />
+    <MESSAGE value="before changing iterations &#10;update pheromones" />
+    <option name="LAST_COMMIT_MESSAGE" value="before changing iterations &#10;update pheromones" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>29</line>
+          <line>22</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main_tsl.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="Ant.pheromone" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

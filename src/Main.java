@@ -1,11 +1,7 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
 
 import org.junit.Test;
 
-
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,9 +15,6 @@ public class Main {
         Graph gr = new Graph(citiesAmount);
         gr.make_distances(gr);
         print_info.print_task(antAmount, wildAntAmount, citiesAmount, alpha, beta, rho);
-
-        ArrayList<Integer> Lpr = new ArrayList<>();
-
 
             int this_min = main_tsl.start_program(-1, gr, antAmount, wildAntAmount, citiesAmount);
 
@@ -49,9 +42,12 @@ public class Main {
 
         Graph gr = Graph.ready_graph(distances);
         gr.print_graph();
-        main_tsl.start_program(1, gr, antAmount,wildAntAmount,citiesAmount);
+        int min = main_tsl.start_program(1, gr, antAmount,wildAntAmount,citiesAmount);
 
+        System.out.println("\nMinimum from all iterations: "+ min);
         Graph.greedyLength(gr,citiesAmount);
+
+        assertEquals(71,min,"Min value Test Check");
 
     }
 

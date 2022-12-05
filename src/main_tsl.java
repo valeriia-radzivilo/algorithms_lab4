@@ -6,40 +6,37 @@ public class main_tsl {
 
     public static int start_program(int start_pos_not_wild,Graph gr,int antAmount, int wildAntAmount, int citiesAmount) {
         // set pheromone
+        double rho = 0.3;
         double[][] pheromone = new double[citiesAmount][citiesAmount];
-        for (int i = 0; i < citiesAmount; i++)
+        for (int i = 0; i < citiesAmount; i++) {
+
             for (int j = 0; j < citiesAmount; j++)
-                if (i == j)
-                    pheromone[i][j] = 0;
-                else
-                    pheromone[i][j] = 1;
+                pheromone[i][j] = 1-rho;
 
-        Ant.setPheromone(pheromone);
+            pheromone[i][i] = 1;
+        }
 
+        int Lmin = citiesAmount * 40; // max possible if all have distance of 40 - max
+        int Lpr = citiesAmount*40;
         ArrayList<Integer>minis = new ArrayList<>();
-        for (int iterator = 1; iterator <= 200; iterator++) {
-            if(start_pos_not_wild==1) iterator = 200;
-            int Lmin = citiesAmount * 40; // max possible if all have distance of 40 - max
-
-            ArrayList<City> cities = Ant.fill_cities(citiesAmount);
-
-
-
+        ArrayList<City> cities = Ant.fill_cities(citiesAmount);
+        double[][] updated_pheromones = pheromone.clone();
+        for (int iterator = 1; iterator <= 1000; iterator++) {
+            // set pheromones for this colony
+            Ant.pheromone = Ant.copy_matrix(updated_pheromones);
             ArrayList<City> starting_positions = Ant.set_ants(new ArrayList<>(cities));
-
-//        if(wildAntAmount>0) System.out.println("SET WILDS");
 
             // запускаємо диких, хай побігають
             for (int i = 0; i < wildAntAmount; i++) {
                 Ant ant = new Ant(true, i, starting_positions.get(i));
-                ant.start_travelling(gr, new ArrayList<>(cities), start_pos_not_wild - 1);
+                ant.start_travelling(gr, new ArrayList<>(cities), start_pos_not_wild - 1,updated_pheromones);
                 if (ant.distance_made < Lmin) Lmin = ant.distance_made;
             }
 
 
-//        System.out.println("SET NON-WILDS");
 
             // let not wild out
+
             for (int i = wildAntAmount; i < antAmount; i++) {
                 City st_pos = starting_positions.get(i);
                 if (start_pos_not_wild != -1 && i == wildAntAmount)
@@ -48,16 +45,24 @@ public class main_tsl {
                     st_pos = cities.get(start_pos_not_wild + 2);
 
                 Ant ant = new Ant(false, i, st_pos);
-                ant.start_travelling(gr, new ArrayList<>(cities), start_pos_not_wild - 1);
-                if (ant.distance_made < Lmin) Lmin = ant.distance_made;
+
+                updated_pheromones = ant.start_travelling(gr, new ArrayList<>(cities), start_pos_not_wild - 1, updated_pheromones);
+
+                if (ant.distance_made < Lmin)
+                {
+                    Lmin = ant.distance_made;
+                }
 
             }
-            if (iterator % 20 == 0) System.out.println("Iteration №"+iterator+ "\nMin distance from these ants: " + Lmin);
             minis.add(Lmin);
+            if (iterator % 20 == 0)
+            {
+                System.out.println("Iteration №"+iterator+ "\nLpr from these ants: " + Lmin);
+                System.out.println("Min distance: "+Collections.min(minis));
+            }
+
 
         }
-        for (double[] c : Ant.pheromone)
-            System.out.println(Arrays.toString(c));
         return Collections.min(minis);
     }
 
