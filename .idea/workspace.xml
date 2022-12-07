@@ -1,10 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="de00093e-dc2c-4a9e-a81f-ac580cc80707" name="Changes" comment="changes hopefully final">
-      <change afterPath="$PROJECT_DIR$/src/Tester.java" afterDir="false" />
+    <list default="true" id="de00093e-dc2c-4a9e-a81f-ac580cc80707" name="Changes" comment="these were not final">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/algorithms_lab4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/algorithms_lab4.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/labs/Additionals/Ant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/labs/Additionals/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/labs/Additionals/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/labs/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main_tsl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/labs/Additionals/main_tsl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/print_info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/labs/Additionals/print_info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +41,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2HtYRQkiASlmjHY9zqLlFP01T82" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -38,16 +62,28 @@
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/leraz/IdeaProjects/asd2_lab2 - Copy&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/leraz/IdeaProjects/algorithms_lab4&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\leraz\IdeaProjects\algorithms_lab4\src\Test" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.labs" />
+    </key>
+  </component>
   <component name="RunManager">
-    <configuration name="Tester.TestNotRandomValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NotRandomTest.TestNotRandomValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="algorithms_lab4" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Tester" />
+      <option name="PACKAGE_NAME" value="Test" />
+      <option name="MAIN_CLASS_NAME" value="Test.NotRandomTest" />
       <option name="METHOD_NAME" value="TestNotRandomValue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -56,7 +92,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Tester.TestNotRandomValue" />
+        <item itemvalue="JUnit.NotRandomTest.TestNotRandomValue" />
       </list>
     </recent_temporary>
   </component>
@@ -80,7 +116,11 @@
       <workItem from="1670069355392" duration="6999000" />
       <workItem from="1670187184681" duration="14000" />
       <workItem from="1670237025104" duration="8512000" />
-      <workItem from="1670269036754" duration="2888000" />
+      <workItem from="1670269036754" duration="5742000" />
+      <workItem from="1670325822371" duration="2112000" />
+      <workItem from="1670417640810" duration="1529000" />
+      <workItem from="1670450369491" duration="886000" />
+      <workItem from="1670451540043" duration="600000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1669470010412</created>
@@ -117,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670273555751</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="these were not final">
+      <created>1670274275875</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1670274275875</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,18 +216,19 @@
     <MESSAGE value="before I delete City class 24 sec to do" />
     <MESSAGE value="before changing iterations &#10;update pheromones" />
     <MESSAGE value="changes hopefully final" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes hopefully final" />
+    <MESSAGE value="these were not final" />
+    <option name="LAST_COMMIT_MESSAGE" value="these were not final" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>18</line>
+          <url>file://$PROJECT_DIR$/src/com/labs/Main.java</url>
+          <line>21</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main_tsl.java</url>
+          <url>file://$PROJECT_DIR$/src/com/labs/Additionals/main_tsl.java</url>
           <line>48</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>

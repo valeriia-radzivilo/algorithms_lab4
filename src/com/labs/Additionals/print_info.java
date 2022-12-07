@@ -1,3 +1,5 @@
+package com.labs.Additionals;
+
 public class print_info {
 
     public static void print_task(int antAmount,int wildAntAmount, int citiesAmount, int alpha, int beta, double rho)

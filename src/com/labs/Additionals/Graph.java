@@ -1,6 +1,6 @@
+package com.labs.Additionals;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Random;
 
 public class Graph {
@@ -14,7 +14,7 @@ public class Graph {
 
     public void setAdj(int v, ArrayList<Integer>arr)
     {
-        adj[v] = new ArrayList<>(arr);
+        adj[v] = new ArrayList<Integer>(arr);
     }
 
 
@@ -50,7 +50,7 @@ public class Graph {
         adj[v].set(index,new_value);
     }
 
-    void make_distances(Graph gr)
+    public void make_distances(Graph gr)
     {
         for(int i =0; i< V;i++)
         {
@@ -67,7 +67,7 @@ public class Graph {
                     if (i == j)
                         gr.changeEdge(i, j,0);
                     else {
-                        int rand_dist = random_dist.nextInt(1, 40);
+                        int rand_dist = random_dist.nextInt(40)+1;
                         gr.changeEdge(i,j,rand_dist);
                         gr.changeEdge(j,i, rand_dist);
                     }
@@ -130,7 +130,6 @@ public class Graph {
 
         ArrayList<Integer>visited = new ArrayList<>();
         visited.add(0);
-        ArrayList<Integer> vals = new ArrayList<>();
         for(int k =0; k<citiesCount-1;k++) {
             int val = graph.find_min_in_adj(visited.get(visited.size() - 1),visited);
             visited.add(val);

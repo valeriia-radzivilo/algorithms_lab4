@@ -1,3 +1,5 @@
+package com.labs.Additionals;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -202,7 +204,7 @@ public class Ant {
 
 
         Random random = new Random();
-        double val = random.nextDouble(1);
+        double val = random.nextDouble();
         int right_sum_pos = 0;
         for(int l =0; l<sums.size()-1;l++)
         {
